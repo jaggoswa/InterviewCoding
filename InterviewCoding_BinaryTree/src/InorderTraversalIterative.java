@@ -1,5 +1,8 @@
 import java.util.Stack;
 
+/* Time Complexity  = O(n)
+ * Space Complexity  = O(n)
+ */
 public class InorderTraversalIterative {
 	
 	TreeNode root;
@@ -23,7 +26,7 @@ public class InorderTraversalIterative {
 			System.out.print(curr.data + " ");
 			
 			curr = curr.right;
-		}
+		} 
 	}
 
 	public static void main(String[] args) {

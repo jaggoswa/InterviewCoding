@@ -29,6 +29,7 @@ public class PreorederTraversalIterative {
 				s.push(node.left);
 			}
 		}
+		
 	}
 
 	public static void main(String[] args) {

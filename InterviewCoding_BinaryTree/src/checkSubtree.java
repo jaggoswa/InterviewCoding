@@ -1,4 +1,5 @@
-
+/* Time Complexity = O(m*n)
+ * Space Complexity = O(n), where is the number of nodes in the main tree*/
 public class checkSubtree {
 	
 	TreeNode root;
