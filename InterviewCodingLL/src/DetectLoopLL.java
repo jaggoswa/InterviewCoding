@@ -13,25 +13,28 @@ public class DetectLoopLL {
 	
 	Node head;
 	
-	void detectLoop(){
-		Node slowPtr = head;
-		Node fastPtr = head;
+	void detectLoop() {
+		
+		Node slow = head;
+		Node fast = head;
 		boolean flag = false;
 		
-		while(fastPtr != null && fastPtr.next != null) {
-			slowPtr = slowPtr.next;
-			fastPtr = fastPtr.next.next;
+		while(fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
 			
-			if(slowPtr == fastPtr) {
+			if(slow == fast) {
 				flag = true;
 				break;
 			}
 		}
 		
 		if(flag)
-			System.out.print("Loop Detected");
+			System.out.println("Loop found");
 		else
-			System.out.print("No Loop Detected");
+			System.out.println("Loop not found");
+		
+		
 	}
 	
 	void insert(int data) {

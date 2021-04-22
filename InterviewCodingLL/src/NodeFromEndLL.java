@@ -1,4 +1,5 @@
-
+/* Time Complexity = O(n)
+ * Space Complexity = O(1)*/
 public class NodeFromEndLL {
 	
 	class Node {
@@ -12,6 +13,7 @@ public class NodeFromEndLL {
 	}
 	
 	Node head;
+	
 	
 	void findNodeFromEnd(int n) {
 		Node tempPtr = head;
@@ -36,6 +38,7 @@ public class NodeFromEndLL {
 		
 		System.out.printf("The element at position %d from end of the list is %s",n,mainPtr.data);
 	}
+	
 	
 	void insert(int data) {
 		Node newNode = new Node(data);
@@ -67,6 +70,6 @@ public class NodeFromEndLL {
 		
 		llist.printList();
 		
-		llist.findNodeFromEnd(7);
+		llist.findNodeFromEnd(2);
 	}
 }

@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+/* Time Complexity = O(n)
+ * Space Complexity = O(n/k)*/
 public class ReverseInGroupsLL {
 	
 	class Node{

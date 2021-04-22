@@ -37,7 +37,7 @@ public class MaximumSizeRectangeInHistogram {
 		
 		for(int i=1; i<arr.length; i++) {
 			
-			while(stack.size() > 0 && arr[i] < arr[stack.peek()]) {
+			while(stack.size() > 0 && arr[i] <= arr[stack.peek()]) {
 				stack.pop();
 			}
 			
@@ -58,7 +58,7 @@ public class MaximumSizeRectangeInHistogram {
 		right[arr.length - 1] = arr.length;
 		
 		for(int i=arr.length-2; i>=0; i--) {
-			while(stack.size() > 0 && arr[i] < arr[stack.peek()]) {
+			while(stack.size() > 0 && arr[i] <= arr[stack.peek()]) {
 				stack.pop();
 			}
 			
@@ -84,7 +84,8 @@ public class MaximumSizeRectangeInHistogram {
 	}
 
 	public static void main(String[] args) {
-		int[] heights = {2,1,5,6,2,3};
+		//int[] heights = {2,1,5,6,2,3};
+		int[] heights = {3,1,3,2,2};
 		
 		System.out.println("Maximum size rectange: " + maxSizeRectangle(heights));
 

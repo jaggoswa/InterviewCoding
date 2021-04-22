@@ -12,7 +12,7 @@ public class TwoNonRepeatingElements {
 			sum = sum^arr[i];
 		}
 		
-		sum = sum & -sum;
+		sum = sum & -sum; //Gets only the rightmost set bit
 		int sum1 = 0;
 		int sum2 = 0;
 		

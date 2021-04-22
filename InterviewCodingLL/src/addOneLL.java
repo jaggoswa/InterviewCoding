@@ -23,6 +23,8 @@ public class addOneLL {
 		return sum/10;
 	}
 	
+	/* Time Complexity = O(n)
+	 * Space Complexity = O(1)*/
 	void addOneWithCarry() {
 		int carry = addOne(head);
 		
@@ -32,6 +34,34 @@ public class addOneLL {
 			head = newNode;
 		}
 	}
+
+/* Time Complexity = O(n)
+ * Space Complexity = O(1)*/	
+//	Node addOneWithCarry1(Node head) {
+//		
+//		Node sentinel = new Node(0);
+//		sentinel.next = head;
+//		Node notNine = sentinel;
+//		
+//		while(head != null) {
+//			if(head.data != 9) {
+//				notNine = head;
+//			}
+//			
+//			head = head.next;
+//		}
+//		
+//		notNine.data++;
+//		Node nine = notNine.next;
+//		
+//		while(nine != null) {
+//			nine.data = 0;
+//			nine = nine.next;
+//		}
+//		
+//		return sentinel.data != 0 ? sentinel : sentinel.next;
+//		
+//	}
 	
 	void insert(int data) {
 		Node newNode = new Node(data);

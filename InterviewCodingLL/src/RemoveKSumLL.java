@@ -1,6 +1,11 @@
 import java.util.*;
 
 //Delete continuous nodes with sum K from a given linked list
+
+/* Time Complexity = O(n)
+ * Space Complexity = O(n)
+ */
+
 public class RemoveKSumLL {
 	class Node{
 		int data;
@@ -14,7 +19,10 @@ public class RemoveKSumLL {
 	
 	Node head;
 	
-	Node removeKSumSublists(Node head){
+	//dummy,1,2,-3,4,5
+	//dummy,1,2,3,-5,6
+	
+	Node removeKSumSublists(Node head,int k){
 		Node dummy = new Node(0);
 		dummy.next = head;
 		
@@ -26,10 +34,10 @@ public class RemoveKSumLL {
 		while(head != null) {
 			pSum += head.data;
 			
-			if(pSumMap.containsKey(pSum)) {
-				Node temp = pSumMap.get(pSum);
+			if(pSumMap.containsKey(pSum - k)) {
+				Node temp = pSumMap.get(pSum - k);
 				Node toRemove = temp.next;
-				int sum = pSum;
+				int sum = pSum - k;
 				
 				while(toRemove != head) {
 					sum += toRemove.data;
@@ -60,7 +68,7 @@ public class RemoveKSumLL {
 		Node temp = headRef;
 		
 		while(temp != null) {
-			System.out.print(temp.data + "->");
+			System.out.print(temp.data + " ");
 			temp = temp.next;
 		}
 	}
@@ -74,7 +82,7 @@ public class RemoveKSumLL {
 		llist.insert(2);
 		llist.insert(1);
 		
-		Node newList = llist.removeKSumSublists(llist.head);
+		Node newList = llist.removeKSumSublists(llist.head,-1);
 		
 		llist.printList(newList);
 	}
