@@ -1,4 +1,7 @@
-
+/* Time Complexity = O(nlogn),average case
+ * 				   = O(n^2),worst case
+ * Space complexity = O(n), inplace
+ */
 public class QuickSort {
 	
 	static void sort(int[] arr, int left, int right) {

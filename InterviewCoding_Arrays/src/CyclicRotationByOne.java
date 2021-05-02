@@ -15,6 +15,13 @@ public class CyclicRotationByOne {
 
 	public static void main(String[] args) {
 		int[] arr = {1,2,3,4,5};
+		
+		System.out.println("The original array is");
+		for(int i : arr) {
+			System.out.print(i + " ");
+		}
+		
+		System.out.println();
 		rotate(arr);
 		
 		System.out.println("The array after rotation");

@@ -23,7 +23,7 @@ public class Sort012 {
 				int temp = arr[mid];
 				arr[mid] = arr[high];
 				arr[high] = temp;
-				high--; //low will never be pointing to zero
+				high--; //mid may be zero and had to be swapped with 1 so we don't decrement mid
 			}
 		}
 	}

@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/* Time complexity = O(mn)
+ * Space Complexity = O(mn)
+ */
 public class LongestCommonSubsequence {
 	
 	static int lcs(String str1, String str2) {
@@ -24,12 +27,12 @@ public class LongestCommonSubsequence {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter first string:");
+		System.out.print("Enter first string:");	//AGGTAB
 		String str1 = sc.next();
-		System.out.print("Enter second string:");
+		System.out.print("Enter second string:");	//GXTXAYB
 		String str2 = sc.next();
 		
-		System.out.println("The longest common subsequence length is: " + lcs(str1,str2));
+		System.out.println("The longest common subsequence length is: " + lcs(str1,str2));	//4
 		
 	}
 
