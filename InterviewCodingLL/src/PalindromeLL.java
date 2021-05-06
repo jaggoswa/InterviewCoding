@@ -1,5 +1,5 @@
-import java.util.*;
-
+/* Time Complexity = O(n)
+ * Space Complexity = O(1)*/
 public class PalindromeLL {
 	
 	class Node{
@@ -99,13 +99,15 @@ public class PalindromeLL {
 		head = newNode;
 	}
 	
-	void printLsit() {
+	void printList() {
 		Node temp = head;
 		
 		while(temp != null) {
 			System.out.print(temp.data + "->");
 			temp = temp.next;
 		}
+		
+		System.out.println();
 	}
 
 	public static void main(String[] args) {
@@ -113,13 +115,13 @@ public class PalindromeLL {
 		PalindromeLL llist = new PalindromeLL();
 		
 		llist.insert(1);
-//		llist.insert(2);
-//		llist.insert(2);
-//		llist.insert(1);
-//		llist.insert(1);
+		llist.insert(2);
+		llist.insert(2);
+		llist.insert(1);
+		llist.insert(1);
 		
+		llist.printList();
 		llist.isPalindrome();
-		llist.printLsit();
 
 	}
 

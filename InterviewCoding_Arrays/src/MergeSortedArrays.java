@@ -1,22 +1,27 @@
 
 public class MergeSortedArrays {
 	
+	/* Time Complexity = O(mn)
+	 * Space Complexity = O(1)*/
 	static void merge(int[] arr1, int[] arr2) {
 		
-		int len1 = arr1.length;
-		int len2 = arr2.length;
+		int m = arr1.length;
+		int n = arr2.length;
 		
-		for(int i=len2-1; i<=0; i--) {
-			int last = arr1[len1-1];
-			for(int j=len1-2; j<0 && arr1[i]>arr2[j]; j--) {
+		for(int i=0; i<m; i++) {
+			if(arr1[i] > arr2[0]) {
+				int temp = arr1[i];
+				arr1[i] = arr2[0];
+				arr2[0] = temp;
 				
-				arr1[j+1] = arr1[j];
+				int first = arr2[0];
+				int k;
 				
-				if(j != len1-2 || last > arr2[i]) {
-					arr1[j+1] = arr2[i];
-					arr2[i] = last;
+				for(k=1; k<n && arr2[k] < first; k++) {
+					arr2[k-1] = arr2[k];
 				}
 				
+				arr2[k-1] = first;
 			}
 		}
 	}
@@ -26,6 +31,16 @@ public class MergeSortedArrays {
 		int[] arr2 = {2, 5, 8, 13};
 		
 		merge(arr1,arr2);
+		
+		for(int elem : arr1) {
+			System.out.print(elem + " ");
+		}
+		
+		System.out.println();
+		
+		for(int elem : arr2) {
+			System.out.print(elem + " ");
+		}
 
 	}
 

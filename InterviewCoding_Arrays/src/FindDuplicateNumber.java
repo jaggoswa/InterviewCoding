@@ -2,13 +2,16 @@
  * containing n + 1 integers where each integer is in 
  * the range [1, n] inclusive.*/
 
-
+/* Time Complexity = O(n)
+ * Space Complexity = O(1)
+ */
 public class FindDuplicateNumber {
 	
 	static int findDuplicate(int[] nums) {
 		int slow = nums[0];
 		int fast = nums[0];
 		
+		//Find intersection point
 		do {
 			
 			slow = nums[slow];
@@ -18,6 +21,7 @@ public class FindDuplicateNumber {
 		
 		slow = nums[0];
 		
+		//Find entrance of the cycle
 		while(slow != fast) {
 			slow = nums[slow];
 			fast = nums[fast];

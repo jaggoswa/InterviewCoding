@@ -1,4 +1,6 @@
-
+/* Time Complexity = O(n)
+ * Space Complexity = O(1)
+ */
 public class RotateLL {
 	
 	class Node{
@@ -17,16 +19,21 @@ public class RotateLL {
 		if(k == 0)
 			return;
 		
+		int n=0;
+		Node temp = head;
+		
+		while(temp != null) {
+			n++;
+			temp = temp.next;
+		}
+		
 		int count = 1;
 		Node current = head;
 		
-		while(count < k && current != null) {
+		while(count < k%n) {
 			current = current.next;
 			count++;
 		}
-		
-		if(current == null)
-			return;
 		
 		Node kthNode = current;
 		
