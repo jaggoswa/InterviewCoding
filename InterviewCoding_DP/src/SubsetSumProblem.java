@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+
+
 public class SubsetSumProblem {
 	
 	static boolean subsetSum(int[] arr, int sum) {
@@ -16,7 +18,7 @@ public class SubsetSumProblem {
 				else if(j < arr[i - 1])
 					dp[i][j] = dp[i-1][j];
 				else
-					dp[i][j] = dp[i-1][j] || dp[i-1][j - arr[i-1]];
+					dp[i][j] = dp[i-1][j] || dp[i-1][j - arr[i-1]]; //Replace OR with '+' for finding number of subset sums
 			}
 		}
 		
