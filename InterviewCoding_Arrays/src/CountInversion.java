@@ -44,6 +44,7 @@ public class CountInversion {
 		
 	}
 
+	
 	public static void main(String[] args) {
 		
 		int[] arr = {1, 9, 6, 4, 5};

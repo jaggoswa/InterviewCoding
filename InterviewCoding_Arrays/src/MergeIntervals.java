@@ -1,6 +1,9 @@
 import java.util.Arrays;
 import java.util.LinkedList;
 
+/* Time Complexity = O(nlogn)
+ * Space Complexity = O(n)
+ */
 public class MergeIntervals {
 	
 	static int[][] merge(int[][] intervals){
@@ -15,6 +18,7 @@ public class MergeIntervals {
 		}
 		
 		return merged.toArray(new int[merged.size()][]);
+		
 	}
 
 	public static void main(String[] args) {

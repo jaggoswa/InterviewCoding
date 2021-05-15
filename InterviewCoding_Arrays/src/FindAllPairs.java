@@ -1,5 +1,8 @@
 import java.util.HashMap;
 
+/* Time Complexity = O(n)
+ * Space Complexity = O(n)
+ */
 public class FindAllPairs {
 	
 	static void findAllPairs(int[] arr, int sum) {
