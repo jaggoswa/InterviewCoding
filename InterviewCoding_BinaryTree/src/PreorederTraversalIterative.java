@@ -7,7 +7,7 @@ public class PreorederTraversalIterative {
 	
 	TreeNode root;
 	
-	void preorderTraversal() {
+void preorderTraversal() {
 		
 		if(root == null)
 			return;
@@ -31,6 +31,7 @@ public class PreorederTraversalIterative {
 		
 	}
 
+	
 	public static void main(String[] args) {
 		
 		PreorederTraversalIterative tree = new PreorederTraversalIterative();

@@ -44,15 +44,15 @@ public class BoundaryTraversal {
 		printLeaves(node.right);
 	}
 	
-	void printBoundary(TreeNode node) {
-		if(node == null)
+	void printBoundary() {
+		if(root == null)
 			return;
 		
-		System.out.print(node.data + " ");
-		printLeftBoundary(node.left);
+		System.out.print(root.data + " ");
+		printLeftBoundary(root.left);
 //		printLeaves(node.left);
-		printLeaves(node);
-		printRightBoundary(node.right);
+		printLeaves(root);
+		printRightBoundary(root.right);
 		
 	}
 	
@@ -67,8 +67,7 @@ public class BoundaryTraversal {
         tree.root.left.right.right = new TreeNode(14); 
         tree.root.right = new TreeNode(22); 
         tree.root.right.right = new TreeNode(25); 
-        tree.root.right.right.right = new TreeNode(35);
-        tree.printBoundary(tree.root); 
+        tree.printBoundary(); 
 
 	}
 

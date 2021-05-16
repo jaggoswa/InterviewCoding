@@ -4,11 +4,14 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.TreeMap;
 
+/* Time Complexity = O(nlogn)
+ * Space Complexity = O(n)
+ */
 public class VerticalTraversal {
 	
 TreeNode root;
 	
-	void printVerticalOrder(TreeNode root) {
+	void printVerticalOrder() {
 		TreeMap<Integer,ArrayList<Integer>> tm = new TreeMap<>();
 		Queue<Qobj> q = new LinkedList<Qobj>();
 		q.add(new Qobj(0,root));
@@ -44,7 +47,8 @@ TreeNode root;
 			System.out.println();
 		}
 	}
-
+	
+	
 	public static void main(String[] args) {
 		
 		VerticalTraversal tree =new VerticalTraversal();
@@ -62,7 +66,7 @@ TreeNode root;
         tree.root.right.right.left.right = new TreeNode(11);
         tree.root.right.right.left.right.right = new TreeNode(12);
         System.out.println("Vertical order traversal is ");
-        tree.printVerticalOrder(tree.root);
+        tree.printVerticalOrder();
 	}
 
 }
