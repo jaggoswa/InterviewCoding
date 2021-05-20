@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
+/* Time Complexity = O(n^2)
+ * Space Complexity = O(n)*/
 public class LongestIncreasingSubsequence {
 	
 	static int LIS(int[] arr) {

@@ -1,8 +1,11 @@
+/* Time Complexity = O(n)
+ * Space Complexity = O(1)
+ */
 public class MorrisTraversal {
 	
 	TreeNode root;
 	
-	void printInorder(TreeNode root) {
+	void printInorder() {
 		TreeNode curr = root;
 		
 		while(curr != null) {
@@ -42,7 +45,7 @@ public class MorrisTraversal {
 		tree.root.left.right.right = new TreeNode(8);
 		tree.root.left.left.right.left = new TreeNode(-1);
 		
-		tree.printInorder(tree.root);
+		tree.printInorder();
 	}
 
 }
