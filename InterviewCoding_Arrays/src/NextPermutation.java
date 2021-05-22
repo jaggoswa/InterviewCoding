@@ -15,7 +15,7 @@ public class NextPermutation {
 		if(i >= 0) {
 			int j = nums.length - 1;
 			
-			//Find smallest element which is greater or equal than element in ith position
+			//Find smallest element which is greater or equal that element in ith position
 			while(j >= 0 && nums[j] <= nums[i]) {
 				j--;
 			}
