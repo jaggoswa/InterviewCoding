@@ -30,7 +30,7 @@ public class Deletion {
 			if(root.left == null)
 				return root.right;
 			if(root.right == null)
-			return root.left;
+				return root.left;
 			
 			root.data = minValue(root.right);
 			root.right = deleteRec(root.right,root.data);
