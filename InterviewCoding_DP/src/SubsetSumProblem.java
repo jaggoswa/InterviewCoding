@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-
-
+/* Time complexity = O(sum*n) 
+ * Space Complexity = O(sum*n) */
 public class SubsetSumProblem {
 	
 	static boolean subsetSum(int[] arr, int sum) {
