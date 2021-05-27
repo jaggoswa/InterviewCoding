@@ -1,4 +1,5 @@
-
+/* Time Complexity = O(mn^2), if we have n main nodes and each having m down/bottom children
+ * Space Complexity = O(m) or O(n) whichever is greater*/
 public class FlattenLinkedList {
 	class Node{
 		int data;

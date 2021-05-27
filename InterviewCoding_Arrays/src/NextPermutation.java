@@ -8,6 +8,7 @@ public class NextPermutation {
 		int i = nums.length-2;
 		
 		//Find the strictly decreasing section
+		//A section which is strictly decreasing has exhausted its possibilities
 		while(i >= 0 && nums[i+1] <= nums[i]) {
 			i--;
 		}
@@ -15,7 +16,7 @@ public class NextPermutation {
 		if(i >= 0) {
 			int j = nums.length - 1;
 			
-			//Find smallest element which is greater or equal that element in ith position
+			//Find smallest element which is greater than element in ith position
 			while(j >= 0 && nums[j] <= nums[i]) {
 				j--;
 			}

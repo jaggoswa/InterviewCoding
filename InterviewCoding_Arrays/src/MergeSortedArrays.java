@@ -1,8 +1,8 @@
 
+/* Time Complexity = O(mn)
+ * Space Complexity = O(1)*/
 public class MergeSortedArrays {
 	
-	/* Time Complexity = O(mn)
-	 * Space Complexity = O(1)*/
 	static void merge(int[] arr1, int[] arr2) {
 		
 		int m = arr1.length;

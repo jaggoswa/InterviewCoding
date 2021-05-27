@@ -2,7 +2,7 @@
  * to find the middle node
  * Space Complexity = O(1)
  */
-public class printMiddle {
+public class PrintMiddle {
 	
 	class Node{
 		int data;
@@ -53,7 +53,7 @@ public class printMiddle {
 
 	public static void main(String[] args) {
 		
-		printMiddle llist = new printMiddle();
+		PrintMiddle llist = new PrintMiddle();
 		
 		//llist.insert(7);
 		llist.insert(6);

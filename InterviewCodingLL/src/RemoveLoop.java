@@ -13,20 +13,39 @@ public class RemoveLoop {
 	Node head;
 	
 	void deleteLoop() {
-		Node slowPtr = head;
-		Node fastPtr = head;
-		Node prev = null;
 		
-		while(fastPtr != null && fastPtr.next != null) {
-			prev = slowPtr;
-			slowPtr = slowPtr.next;
-			fastPtr = fastPtr.next.next;
-			
-			if(slowPtr == fastPtr)
-				break;
-		}
-		
-		prev.next = null;
+		// If list is empty or has only one node
+        // without loop
+        if (head == null || head.next == null)
+            return;
+ 
+        Node slow = head, fast = head;
+ 
+        // Move slow and fast 1 and 2 steps
+        // ahead respectively.
+        slow = slow.next;
+        fast = fast.next.next;
+ 
+        // Search for loop using slow and fast pointers
+        while (fast != null && fast.next != null) {
+            if (slow == fast)
+                break;
+ 
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+ 
+        /* If loop exists */
+        if (slow == fast) {
+            slow = head;
+            while (slow.next != fast.next) {
+                slow = slow.next;
+                fast = fast.next;
+            }
+ 
+            /* since fast->next is the looping point */
+            fast.next = null; /* remove loop */
+        }
 	}
 	
 	void insert(int data) {
@@ -36,8 +55,8 @@ public class RemoveLoop {
 		head = newNode;
 	}
 		
-	void printList(Node headRef) {
-		Node temp = headRef;
+	void printList() {
+		Node temp = head;
 			
 		while(temp != null) {
 			System.out.print(temp.data + "->");
@@ -54,11 +73,11 @@ public class RemoveLoop {
         llist.insert(10);
  
         /*Create loop for testing */
-        llist.head.next.next.next.next = llist.head;
+        llist.head.next.next.next.next = llist.head.next;
  
         llist.deleteLoop();
 
-        llist.printList(llist.head);
+        llist.printList();
 	}
 
 }

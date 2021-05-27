@@ -15,7 +15,6 @@ public class MaximumSumSubarray {
 		}
 		
 		return max_so_far;
-		
 	}
 
 	public static void main(String[] args) {

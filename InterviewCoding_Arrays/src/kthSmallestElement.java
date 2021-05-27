@@ -1,5 +1,8 @@
 import java.util.Random;
-
+/* Time Complexity = O(n),average case
+ * 				   = O(n^2),worst case
+ * Space complexity = O(n), inplace
+ */
 public class kthSmallestElement {
 	
 	static int random(int min, int max) {

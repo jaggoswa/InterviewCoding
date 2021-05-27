@@ -4,17 +4,16 @@
 public class MoveNegElemToLeft {
 	
 	static void rearrange(int[] arr) {
-		int j=0, temp;
+		int i=0, j=0;
 		
-		for(int i=0; i<arr.length; i++) {
-			if(arr[i] < 0) {
-				if(i != j) {
-					temp = arr[i];
-					arr[i] = arr[j];
-					arr[j] = temp;
-				}
-				j++;
+		while(j <arr.length) {
+			if(arr[j] < 0) {
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+				i++;
 			}
+			j++;
 		}
 	}
 
