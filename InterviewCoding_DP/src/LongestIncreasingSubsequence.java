@@ -17,24 +17,18 @@ public class LongestIncreasingSubsequence {
 			}
 		}
 		
-		return dp[dp_length - 1];
+		int max = Integer.MIN_VALUE;
+		for(int elem : dp) {
+			max = Math.max(max, elem);
+		}
+		
+		return max;
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("Enter the size of the array: ");
-		int size = sc.nextInt();
-		
-		System.out.print("Enter the array: ");
-		int[] arr = new int[size];
-		
-		for(int i=0; i<size; i++) {
-			arr[i] = sc.nextInt();
-		}
-		
+		int[] arr = {10, 22, 9, 33, 21, 50, 41, 60};
 		System.out.println("The longest increasing subsequence length is: " + LIS(arr));
-
 	}
 
 }

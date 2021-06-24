@@ -7,12 +7,13 @@ public class PostorderTraversalIterative {
 	TreeNode root;
 	
 	void postorderTraversal() {
+		
 		if(root == null)
 			return;
-		
+			
 		Stack<TreeNode> s = new Stack<>();
 		TreeNode curr = root;
-		
+	
 		while(curr != null || !s.isEmpty()) {
 			if(curr != null) {
 				s.push(curr);
