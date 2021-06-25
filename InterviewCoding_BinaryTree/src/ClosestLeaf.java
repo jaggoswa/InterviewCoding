@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class ClosestLeaf {
 	
-TreeNode root;
+	TreeNode root;
 	
 	int closestDown(TreeNode node) {
 		if(node == null)
@@ -22,7 +22,7 @@ TreeNode root;
 			int res = closestDown(node);
 			
 			for(int i = index - 1; i >= 0; i--) {
-			res = Math.min(res,(index - i) + closestDown(ancestors.get(i)));
+				res = Math.min(res,(index - i) + closestDown(ancestors.get(i)));
 			}
 			
 			return res;

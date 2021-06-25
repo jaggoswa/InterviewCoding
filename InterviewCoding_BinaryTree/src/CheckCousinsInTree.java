@@ -1,8 +1,10 @@
+/* Time Complexity = O(n)
+ * Space complexity = O(n)*/
 
 public class CheckCousinsInTree {
 	
 TreeNode root;
-	
+
 	boolean isCousin(TreeNode node1, TreeNode node2) {
 		return (getLevel(root,node1,1) == getLevel(root,node2,1) 
 				&& !isSibling(root,node1,node2));
