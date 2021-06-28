@@ -10,8 +10,7 @@ public class CountPairsDivisibleByK {
 			int rem = e % k;
 			
 			if(rem == 0 && hm.containsKey(rem)) {
-				int val = hm.get(rem);
-				count += val;
+				count += hm.get(rem);
 			}
 			
 			if(hm.containsKey(k - rem)) {

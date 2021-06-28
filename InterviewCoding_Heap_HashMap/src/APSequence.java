@@ -1,11 +1,14 @@
 import java.util.HashMap;
 import java.util.Map;
 
+
+/* Time Complexity = O(n)
+ * Space Complexity = O(n)*/
 public class APSequence {
 
 	public static void main(String[] args) {
 		
-		int[] arr = {0, 12, 4, 4, 8};
+		int[] arr = {0, 12, 4, 8};
 		HashMap<Integer,Integer> hm = new HashMap<>();
 		
 		int firstTerm = Integer.MAX_VALUE;
@@ -17,8 +20,8 @@ public class APSequence {
 			return;
 		}
 		
-		//Finding first and second term of sequence
 		for(int e : arr) {
+			//Finding first and second term of sequence
 			if(e < firstTerm) {
 				secondTerm = firstTerm;
 				firstTerm = e;
@@ -26,17 +29,9 @@ public class APSequence {
 			else if(e != firstTerm && e < secondTerm) {
 				secondTerm = e;
 			}
-		}
-		
-		//Adding elements and their frequencies to hash map
-		for(int e : arr) {
-			if(hm.containsKey(e)) {
-				int val = hm.get(e);
-				hm.put(e, val+1);
-			}
-			else {
-				hm.put(e, 1);
-			}
+			
+			//Adding elements and their frequencies to hash map
+			hm.put(e, hm.getOrDefault(e, 0) + 1);
 		}
 		
 		//If there are duplicates, they can be in AP only if all elements are same
@@ -52,17 +47,16 @@ public class APSequence {
 		}
 		
 		int commonDiff = secondTerm - firstTerm;
-		int nextTerm = firstTerm + commonDiff;
+		int nextTerm = secondTerm;
 		int size = arr.length-1;
 		
-		while(size > 0) {
-			if(!hm.containsKey(nextTerm)) {
-				System.out.print(false);
-				return;
-			}
-			nextTerm += commonDiff;
-			size--;
-		}
+		for (var i = 0; i < size; i++) {
+	        if (!hm.containsKey(nextTerm)) {
+	        	System.out.print(false);
+	            return;
+	        }
+	        nextTerm += commonDiff;
+	    }
 		
 		System.out.print(true);
 

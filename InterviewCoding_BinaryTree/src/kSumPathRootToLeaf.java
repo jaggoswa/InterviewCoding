@@ -12,9 +12,9 @@ public class kSumPathRootToLeaf {
 		
 		sum -= root.data;
 		if(root.left == null && root.right == null)
-			return (sum == 0);
+			return sum == 0;
 		
-		return (hasPathSum(root.left,sum) || hasPathSum(root.right,sum));
+		return (hasPathSum(root.left, sum) || hasPathSum(root.right, sum));
 	}
 	
 	public static void main(String[] args) {

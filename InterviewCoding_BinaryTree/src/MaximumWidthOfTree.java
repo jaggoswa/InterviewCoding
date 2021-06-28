@@ -17,8 +17,8 @@ public class MaximumWidthOfTree {
 		
 		while(!q.isEmpty()) {
 			int count = q.size();
-			maxWidth = Math.max(maxWidth, count)
-;
+			maxWidth = Math.max(maxWidth, count);
+			
 			while(count-- > 0) {
 				TreeNode temp = q.remove();
 				

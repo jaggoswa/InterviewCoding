@@ -35,7 +35,7 @@ public class PrintKSumPathRootToLeaf {
 
 	public static void main(String[] args) {
 		PrintKSumPathRootToLeaf tree = new PrintKSumPathRootToLeaf();
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in); //Put 22
 		
 		tree.root = new TreeNode(5);
 		tree.root.left = new TreeNode(4);

@@ -8,20 +8,21 @@ public class MaxPathLeafToLeaf {
 		if(root == null)
 			return 0;
 		
+		if(root.left == null && root.right == null)
+			return root.data;
+		
 		int left = maxPathSum(root.left);
 		int right = maxPathSum(root.right);
 		
-		int temp = Math.max(left, right) + root.data;
+		if(root.left != null && root.right != null) {
+			result = Math.max(result, left+right+root.data);
+			return Math.max(left, right) + root.data;
+		}
 		
-		//The current node can be the starting point of a max path only when it is a leaf node 
-		if(root.left == null && root.right == null)
-			temp = Math.max(temp, root.data);
-		
-		int ans = Math.max(left+right+root.data, temp);
-		result = Math.max(ans, result);
-		
-		return temp;
-		
+		if(root.left != null)
+			return left + root.data;
+		else
+			return right + root.data;
 	}
 
 	public static void main(String[] args) {

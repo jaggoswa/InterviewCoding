@@ -21,7 +21,7 @@ public class DistanceRootToNode {
 		
 		return left;
 	}
-
+	
 	public static void main(String[] args) {
 		DistanceRootToNode tree = new DistanceRootToNode();
 		Scanner sc = new Scanner(System.in);

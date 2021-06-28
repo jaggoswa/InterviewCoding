@@ -1,5 +1,5 @@
 
-public class RemoveNodesRToLSumLessThanK {
+public class RemoveNodesOfPathWithSumLessThanK {
 	
 	TreeNode root;
 	
@@ -28,7 +28,7 @@ public class RemoveNodesRToLSumLessThanK {
 	
 	public static void main(String[] args) {
 		
-		RemoveNodesRToLSumLessThanK tree = new RemoveNodesRToLSumLessThanK();
+		RemoveNodesOfPathWithSumLessThanK tree = new RemoveNodesOfPathWithSumLessThanK();
 		  
         tree.root = new TreeNode(1);
         tree.root.left = new TreeNode(2);
