@@ -14,11 +14,15 @@ public class CheckCompleteTree {
 		if(root == null)
 			return true;
 		
-		if(index >= noOfNodes)
-			return false;
+		System.out.println(root.data + ": " + index);
 		
-		return (isComplete(root.left,2*index+1,noOfNodes)
-				&& isComplete(root.right,2*index+2,noOfNodes));
+		if(index >= noOfNodes) {
+			System.out.println(index);
+			return false;
+		}
+		
+		return (isComplete(root.left,2 * index + 1,noOfNodes)
+			&& isComplete(root.right,2 * index + 2,noOfNodes));
 	}
 
 	public static void main(String[] args) {
@@ -26,7 +30,7 @@ public class CheckCompleteTree {
 		
 		tree.root = new TreeNode(1);
 		tree.root.left = new TreeNode(2);
-		tree.root.right = new TreeNode(3);
+//		tree.root.right = new TreeNode(3);
 		tree.root.left.left = new TreeNode(4);
 		tree.root.left.right = new TreeNode(5);
 //		tree.root.right.right = new TreeNode(6);

@@ -5,10 +5,8 @@ import java.util.Map;
 /* Time Complexity = O(n)
  * Space Complexity = O(n)*/
 public class APSequence {
-
-	public static void main(String[] args) {
-		
-		int[] arr = {0, 12, 4, 8};
+	
+	public static boolean isAPSequence(int[] arr) {
 		HashMap<Integer,Integer> hm = new HashMap<>();
 		
 		int firstTerm = Integer.MAX_VALUE;
@@ -16,8 +14,7 @@ public class APSequence {
 		
 		//If only one element in array
 		if(arr.length == 1) {
-			System.out.print(false);
-			return;
+			return false;
 		}
 		
 		for(int e : arr) {
@@ -38,11 +35,9 @@ public class APSequence {
 		for(Map.Entry<Integer, Integer> e : hm.entrySet()) {
 			int val = e.getValue();
 			if(val > 1 && val != arr.length) {
-				System.out.print(false);
-				return;
+				return false;
 			}else if(val == arr.length){
-				System.out.print(true);
-				return;
+				return true;
 			}
 		}
 		
@@ -52,13 +47,23 @@ public class APSequence {
 		
 		for (var i = 0; i < size; i++) {
 	        if (!hm.containsKey(nextTerm)) {
-	        	System.out.print(false);
-	            return;
+	            return false;
 	        }
 	        nextTerm += commonDiff;
 	    }
 		
-		System.out.print(true);
+		return true;
+		
+	}
+
+	public static void main(String[] args) {
+		
+		int[] arr = {0, 12, 4, 8};
+		
+		if(isAPSequence(arr))
+			System.out.print("YES");
+		else
+			System.out.print("No");
 
 	}
 
