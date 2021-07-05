@@ -4,28 +4,23 @@ public class CountPairsDivisibleByK {
 	public static int countPairs(int[] arr, int k) {
 		
 		HashMap<Integer, Integer> hm = new HashMap<>();
-		int count = 0;
+		int ans = 0;
 		
-		for(int e : arr) {
-			int rem = e % k;
+		for(int n : arr) {
+			int rem = n % k;
 			
 			if(rem == 0 && hm.containsKey(rem)) {
-				count += hm.get(rem);
+				ans += hm.get(rem);
 			}
 			
-			if(hm.containsKey(k - rem)) {
-				count += hm.get(k - rem);
+			if(hm.containsKey(k-rem)) {
+				ans += hm.get(k-rem);
 			}
 			
-			if(hm.containsKey(rem)){
-				int val = hm.get(rem);
-				hm.put(rem, val+1);
-			}else {
-				hm.put(rem, 1);
-			}
+			hm.put(rem, hm.getOrDefault(rem, 0) + 1);
 		}
 		
-		return count;
+		return ans;
 		
 	}
 

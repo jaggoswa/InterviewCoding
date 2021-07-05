@@ -17,20 +17,18 @@ public class LongestSubstringWithoutRepetition {
 		while(j < str.length() - 1) {
 			j++;
 			char ch = str.charAt(j);
-			if(!hm.containsKey(ch)) {
-				hm.put(ch, hm.getOrDefault(ch, 0) + 1);
-				maxLength = Math.max(maxLength, j-i+1);
-			}
-			else {
-				while(hm.get(ch) != 0) {
-					ch = str.charAt(i);
-					hm.put(ch, hm.get(ch) - 1);
-					i++;
-				}
-			}
+			hm.put(ch, hm.getOrDefault(ch, 0) + 1);
+            
+            while(hm.get(str.charAt(j)) > 1) {
+                ch = str.charAt(i);
+                hm.put(ch, hm.get(ch) - 1);
+                i++;
+            }
+            
+            maxLength = Math.max(maxLength, j-i+1);
 		}
 		
-		return maxLength;
+		return maxLength; 
 	}
 
 	public static void main(String[] args) {
