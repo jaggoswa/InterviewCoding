@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class KAnagram {
 	
-	public static boolean checkKAnagram(String str1, String str2, int k) {
+public static boolean checkKAnagram(String str1, String str2, int k) {
 		
 		if(str1.length() != str2.length())
 			return false;
@@ -32,8 +32,8 @@ public class KAnagram {
 
 	public static void main(String[] args) {
 		
-		String str1 = "anagram", str2 = "grammar";
-		int k = 3;
+		String str1 = "geeks", str2 = "eggkf";
+		int k = 1;
 		
 		if(checkKAnagram(str1, str2, k)) {
 			System.out.print("Yes");

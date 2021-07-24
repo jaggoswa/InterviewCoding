@@ -1,5 +1,6 @@
 /* Time Complexity = O(m+n)
  * Space Complexity = O(1)
+ * Reference: https://www.youtube.com/watch?v=z092lX-nhik
  */
 public class RowWithMaxOnes {
 	
@@ -10,11 +11,10 @@ public class RowWithMaxOnes {
 		int maxRowindex = 0;
 		int j = cols-1;
 		
-		while(j>=0 && matrix[0][j] == 1) {
-			j--;
-		}
+		if(maxRowindex == 0 && matrix[0][cols-1] == 0)
+            return -1;
 		
-		for(int i=1; i<rows; i++) {
+		for(int i=0; i<rows; i++) {
 			while(j>= 0 && matrix[i][j] == 1) {
 				j--;
 				maxRowindex = i;
@@ -27,7 +27,6 @@ public class RowWithMaxOnes {
 	public static void main(String[] args) {
 		int[][] matrix = {{0, 1, 1, 1},{0, 0, 1, 1},{1, 1, 1, 1},{0, 0, 0, 0}};
 		System.out.println("Index of the 1st row with max ones is: " + maxOnesIndex(matrix));
-
 	}
 
 }

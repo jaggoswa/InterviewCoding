@@ -5,6 +5,7 @@ public class SameFrequencyAfterOneRemoval {
 	public static boolean checkAllSame(HashMap<Character, Integer> hm) {
 		
 		int same = 0;
+		
 		for(Map.Entry<Character, Integer> e : hm.entrySet()) {
 			int val = e.getValue();
 			if(val > 0) {
@@ -15,8 +16,9 @@ public class SameFrequencyAfterOneRemoval {
 		
 		for(Map.Entry<Character, Integer> e : hm.entrySet()) {
 			int val = e.getValue();
-			if(val > 0 && val != same)
+			if(val > 0 && val != same) {
 				return false;
+			}
 		}
 		
 		return true;
@@ -27,13 +29,7 @@ public class SameFrequencyAfterOneRemoval {
 		HashMap<Character, Integer> hm = new HashMap<>();
 		
 		for(int i=0; i<str.length(); i++) {
-			char ch = str.charAt(i);
-			if(hm.containsKey(ch)) {
-				int val = hm.get(ch);
-				hm.put(ch, val+1);
-			}else {
-				hm.put(ch, 1);
-			}
+			hm.put(str.charAt(i), hm.getOrDefault(str.charAt(i), 0) + 1);
 		}
 		
 		if(checkAllSame(hm))
@@ -42,12 +38,12 @@ public class SameFrequencyAfterOneRemoval {
 		for(Map.Entry<Character, Integer> e : hm.entrySet()) {
 			char key = e.getKey();
 			int val = e.getValue();
-			hm.put(key, val-1);
+			hm.put(key, val - 1);
 			
 			if(checkAllSame(hm))
 				return true;
 			
-			hm.put(key, val);
+			hm.put(key, val);	
 		}
 		
 		return false;

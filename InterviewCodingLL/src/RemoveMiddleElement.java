@@ -15,7 +15,11 @@ public class RemoveMiddleElement {
 	
 	Node head;
 	
-	void remove() {
+	Node remove() {
+		
+		if (head == null || head.next == null)
+            return null;
+		
 		Node slowPtr = head;
 		Node fastPtr = head;
 		Node prev = null;
@@ -27,6 +31,8 @@ public class RemoveMiddleElement {
 		}
 		
 		prev.next = slowPtr.next;
+		
+		return head;
 	}
 	
 	void insert(int data) {
@@ -58,7 +64,7 @@ public class RemoveMiddleElement {
 		System.out.println("The original linked list is:");
 		llist.printList();
 		
-		llist.remove();
+		llist.head = llist.remove();
 		
 		System.out.println("The modified linked list is:");
 		llist.printList();

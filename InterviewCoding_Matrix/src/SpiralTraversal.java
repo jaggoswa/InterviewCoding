@@ -1,6 +1,6 @@
 
 public class SpiralTraversal {
-	
+
 	static void printSpiralTraversal(int[][] m) {
 		int rows = m[0].length;
 		int cols = m.length;

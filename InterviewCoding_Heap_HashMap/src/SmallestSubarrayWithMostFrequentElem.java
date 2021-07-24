@@ -3,7 +3,7 @@ import java.util.HashMap;
 public class SmallestSubarrayWithMostFrequentElem {
 	
 	static class Pair{
-		
+			
 		int startIdx;
 		int endIdx;
 		int frequency;
@@ -14,7 +14,7 @@ public class SmallestSubarrayWithMostFrequentElem {
 			this.frequency = frequency;
 		}
 	}
-	
+		
 	public static Pair smallestSubarray(int[] arr) {
 		
 		HashMap<Integer,Pair> hm = new HashMap<>();
@@ -49,6 +49,7 @@ public class SmallestSubarrayWithMostFrequentElem {
 		
 		return new Pair(startIdx, endIdx, maxFreq);
 	}
+
 
 	public static void main(String[] args) {
 		

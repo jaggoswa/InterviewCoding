@@ -77,12 +77,12 @@ public class RemoveKSumLL {
 		RemoveKSumLL llist = new RemoveKSumLL();
 		
 		llist.insert(1);
-		llist.insert(4);
+		llist.insert(3);
 		llist.insert(-3);
 		llist.insert(2);
 		llist.insert(1);
 		
-		Node newList = llist.removeKSumSublists(llist.head,-1);
+		Node newList = llist.removeKSumSublists(llist.head,0);
 		
 		llist.printList(newList);
 	}

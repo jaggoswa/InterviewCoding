@@ -6,23 +6,21 @@ import java.util.Scanner;
 public class LongestIncreasingSubsequence {
 	
 	static int LIS(int[] arr) {
-		int dp_length = arr.length;
-		int[] dp = new int[dp_length];
+		
+		int[] dp = new int[arr.length];
 		Arrays.fill(dp, 1);
 		
-		for(int i=1; i<dp_length; i++) {
+		int maxLength = 0;
+		for(int i=1; i<dp.length; i++) {
 			for(int j=0; j<i; j++) {
-				if(arr[i] > arr[j])
+				if(arr[i] > arr[j]) {
 					dp[i] = Math.max(dp[i], 1 + dp[j]);
+				}
 			}
+			maxLength = Math.max(maxLength, dp[i]);
 		}
 		
-		int max = Integer.MIN_VALUE;
-		for(int elem : dp) {
-			max = Math.max(max, elem);
-		}
-		
-		return max;
+		return maxLength;
 	}
 
 	public static void main(String[] args) {

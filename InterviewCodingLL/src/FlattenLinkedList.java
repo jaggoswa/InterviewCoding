@@ -37,8 +37,8 @@ public class FlattenLinkedList {
 	}
 	
 	Node flatten(Node root) {
-		if(root == null)
-			return null;
+		if(root == null || root.right == null)
+			return root;
 		
 		while(root.right != null) {
 			Node next = root.right.right;

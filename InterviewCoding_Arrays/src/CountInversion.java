@@ -43,14 +43,13 @@ public class CountInversion {
 		return count;
 		
 	}
-
 	
 	public static void main(String[] args) {
 		
 		int[] arr = {1, 9, 6, 4, 5};
 		int[] aux = Arrays.copyOf(arr, arr.length);
 		
-		int inversionCount = mergeSort(arr,aux,0,arr.length-1);
+		int inversionCount = mergeSort(arr, aux, 0,arr.length-1);
 		
 		System.out.print("The inversion count of the array is: " + inversionCount);
 
