@@ -15,9 +15,11 @@ public class ValidParentheses {
 				
 				leftChars.push(exp.charAt(i));
 			}else {
+				//If closing bracket and the stack is empty i.e more closing brackets
 				if(leftChars.isEmpty())
 					return false;
 				
+				//If closing bracket doesn't match the top of the stack i.e mismatched brackets
 				if(exp.charAt(i) == ')' && leftChars.peek() != '(' ||
 				   exp.charAt(i) == ']' && leftChars.peek() != '[' ||
 				   exp.charAt(i) == '}' && leftChars.peek() != '{') {
@@ -29,7 +31,7 @@ public class ValidParentheses {
 			}
 		}
 		
-		return leftChars.isEmpty();
+		return leftChars.isEmpty(); //If characters left in stack return false i.e more opening brackets
 	}
 
 	public static void main(String[] args) {

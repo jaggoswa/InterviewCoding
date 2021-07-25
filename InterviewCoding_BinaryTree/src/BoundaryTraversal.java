@@ -55,6 +55,7 @@ public class BoundaryTraversal {
 		printRightBoundary(root.right);
 		
 	}
+
 	
 	public static void main(String[] args) {
 		BoundaryTraversal tree = new BoundaryTraversal();
