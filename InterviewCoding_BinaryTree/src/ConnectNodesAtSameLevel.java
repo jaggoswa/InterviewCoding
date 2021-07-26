@@ -19,30 +19,52 @@ public class ConnectNodesAtSameLevel {
 
 	TreeNode1 root;
 	
+//	void connect(TreeNode1 root) {
+//		Queue<TreeNode1> q = new LinkedList<TreeNode1>();
+//		q.add(root);
+//		
+//		while(!q.isEmpty()) {
+//			int n = q.size();
+//			
+//			for(int i=0; i<n; i++) {
+//				TreeNode1 temp = q.poll();
+//				
+//				if(i < n-1)
+//					temp.nextRight = q.peek();
+//				
+//				if(temp.left != null)
+//					q.add(temp.left);
+//				
+//				if(temp.right != null)
+//					q.add(temp.right);
+//			}
+//		}
+//	}
+	
+	//In case of perfect binary tree
+	//Space Complexity = O(1)
 	void connect(TreeNode1 root) {
-		Queue<TreeNode1> q = new LinkedList<TreeNode1>();
-		q.add(root);
-		TreeNode1 temp = null;
 		
-		while(!q.isEmpty()) {
-			int n = q.size();
+		if(root == null)
+			return;
+		
+		TreeNode1 leftmost = root;
+		while(leftmost.left != null) {
+			TreeNode1 head = leftmost;
 			
-			for(int i=0; i<n; i++) {
-				TreeNode1 prev = temp;
-				temp = q.poll();
+			while(head != null) {
 				
-				if(i > 0)
-					prev.nextRight = temp;
+				head.left.nextRight = head.right;
 				
-				if(temp.left != null)
-					q.add(temp.left);
+				if(head.nextRight != null)
+					head.right.nextRight = head.nextRight.left;
 				
-				if(temp.right != null)
-					q.add(temp.right);
+				head = head.nextRight;
 			}
 			
-			temp.nextRight = null;
+			leftmost = leftmost.left;
 		}
+		
 	}
 	
 	public static void main(String[] args) {
@@ -52,6 +74,9 @@ public class ConnectNodesAtSameLevel {
         tree.root.left = new TreeNode1(8); 
         tree.root.right = new TreeNode1(2); 
         tree.root.left.left = new TreeNode1(3);
+        tree.root.left.right = new TreeNode1(4);
+        tree.root.right.left = new TreeNode1(5);
+        tree.root.right.right = new TreeNode1(6);
         
         tree.connect(tree.root);
         

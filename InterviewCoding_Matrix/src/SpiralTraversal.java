@@ -1,3 +1,6 @@
+/* Time Complexity = O(mn)
+ * Space Complexity = O(1)
+ */
 
 public class SpiralTraversal {
 
@@ -34,7 +37,7 @@ public class SpiralTraversal {
 			dir = (dir+1)%4;
 		}
 	}
-
+	
 	public static void main(String[] args) {
 		
 		int[][] matrix = {{2,4,6,8},{5,9,12,16},{2,11,5,9},{3,2,1,8}};

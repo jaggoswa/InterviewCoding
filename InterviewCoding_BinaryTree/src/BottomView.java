@@ -1,7 +1,4 @@
-import java.util.LinkedList;
-import java.util.Map.Entry;
-import java.util.Queue;
-import java.util.TreeMap;
+import java.util.*;
 
 /* Time Complexity = O(nlogn)
  * Space Complexity = O(n)
@@ -37,7 +34,7 @@ public class BottomView {
 			
 		}
 		
-		for(Entry<Integer,Integer> entry : tm.entrySet()) {
+		for(Map.Entry<Integer,Integer> entry : tm.entrySet()) {
 			System.out.print(entry.getValue() + " ");
 		}
 	}
@@ -50,8 +47,7 @@ public class BottomView {
         tree.root.left = new TreeNode(8); 
         tree.root.right = new TreeNode(22); 
         tree.root.left.left = new TreeNode(5); 
-        tree.root.left.right = new TreeNode(3); 
-        tree.root.right.left = new TreeNode(4); 
+        tree.root.left.right = new TreeNode(3);  
         tree.root.right.right = new TreeNode(25); 
         tree.root.left.right.left = new TreeNode(10); 
         tree.root.left.right.right = new TreeNode(14); 

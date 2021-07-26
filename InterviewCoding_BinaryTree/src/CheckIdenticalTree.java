@@ -28,7 +28,7 @@ public class CheckIdenticalTree {
 		
 		tree2.root = new TreeNode(1);
 		tree2.root.left = new TreeNode(2);
-//		tree2.root.right = new TreeNode(3);
+		tree2.root.right = new TreeNode(3);
 		
 		if(tree1.isIdentical(tree1.root,tree2.root))
 			System.out.println("The trees are identical");

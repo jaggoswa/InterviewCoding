@@ -7,7 +7,7 @@ public class PreorederTraversalIterative {
 	
 	TreeNode root;
 	
-	void preorderTraversal() {
+void preorderTraversal() {
 		
 		if(root == null)
 			return;

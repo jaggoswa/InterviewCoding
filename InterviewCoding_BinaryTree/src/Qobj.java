@@ -1,4 +1,3 @@
-
 public class Qobj {
 	int hd;
 	TreeNode node;

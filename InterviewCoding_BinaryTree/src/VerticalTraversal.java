@@ -9,7 +9,7 @@ import java.util.TreeMap;
  */
 public class VerticalTraversal {
 	
-TreeNode root;
+	TreeNode root;
 	
 	void printVerticalOrder() {
 		TreeMap<Integer,ArrayList<Integer>> tm = new TreeMap<>();
@@ -46,8 +46,7 @@ TreeNode root;
 			}
 			System.out.println();
 		}
-	}
-	
+	}	
 	
 	public static void main(String[] args) {
 		
@@ -62,9 +61,6 @@ TreeNode root;
         tree.root.right.right = new TreeNode(7);
         tree.root.right.left.right = new TreeNode(8);
         tree.root.right.right.right = new TreeNode(9);
-        tree.root.right.right.left = new TreeNode(10);
-        tree.root.right.right.left.right = new TreeNode(11);
-        tree.root.right.right.left.right.right = new TreeNode(12);
         System.out.println("Vertical order traversal is ");
         tree.printVerticalOrder();
 	}
